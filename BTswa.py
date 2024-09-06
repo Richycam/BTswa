@@ -121,8 +121,7 @@ def main():
     if main_cntrl == "1":
         clear()
         siem.call_back(link)
-        back = input("go back? Y/N?")
-        if back == "y" or "Y":
+        if str(input("go back? Y/N?")).lower() == "y":
             clear()
             print(Banner)
             menu()
@@ -132,16 +131,14 @@ def main():
     elif main_cntrl == "2":
         if siem.call_back(tool) == "elastic"  or "kibana" or "Elastic" or "Kibana":
             print("https://www.elastic.co/guide/index.html?utm_campaign=Google-B-EMEA-UKI-Exact&utm_content=Brand-Core-Documentation&utm_source=google&utm_medium=cpc&device=c&utm_term=elastic%20documentation&gad_source=1&gclid=EAIaIQobChMIsuHa15OuiAMV6JtQBh2tHgypEAAYASAAEgKobvD_BwE") 
-            back = input("go back? Y/N?")
-            if back == "y" or "Y":
+            if str(input("go back? Y/N?")).lower() == "y":
                 clear()
                 print(Banner)
                 menu()
                 main()
         elif siem.call_back(tool) == "Splunk" or "splunk":
             print("https://docs.splunk.com/Documentation") 
-            back = input("go back? Y/N?")
-            if back == "y" or "Y":
+            if str(input("go back? Y/N?")).lower() == "y":
                 clear()
                 print(Banner)
                 menu()
