@@ -7,12 +7,14 @@ import os
 import random
 import sys
 
-def animation():
-    BANNER = """
+Banner = """
     ############          Blue Team swiss army knife       ############
     ############           --for Blue teamers--            ############
     ############        https://github.com/Richycam        ############
     """
+
+
+def animation():
 
     frames = [    """
      ___________________
@@ -80,7 +82,6 @@ def animation():
     """]
 
     for frame in frames:
-        print(BANNER)
         print(frame)
         time.sleep(round(random.uniform(0.4,0.7),1)) # Generates a random float value between 0.4 and 0.7, returning 1 decimal place
         clear()
@@ -96,13 +97,12 @@ def exit():
 
 
 def menu():
-
+    print(Banner)
     print("--------------------------------------------")
     print(siem.get_tool())    
     print("1) siem link ")
     print("2) siem documents")
     print("3) Nmap")
-    print("4) ")
     print("--------------------------------------------")
 
 
@@ -178,4 +178,3 @@ link = input("tool link? \n").lower()
 siem = siem(tool,link)
 clear()
 main()
-
