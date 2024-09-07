@@ -3,14 +3,14 @@
 fn read_string_tool() -> String {
    let mut tool = String::new();
    std::io::stdin()
-       .read_line(&mut input)
+       .read_line(&mut tool)
        .expect("can not read user input");
    tool
 }
 fn read_string_link(){
    let mut link = String::new();
    std::io::stdin()
-       .read_line(&mut input)
+       .read_line(&mut link)
        .expect("can not read user input");
    link
 }
