@@ -7,6 +7,7 @@ import os
 import random
 import sys
 
+
 Banner = """
     ############          Blue Team swiss army knife       ############
     ############           --for Blue teamers--            ############
@@ -83,7 +84,8 @@ def animation():
 
     for frame in frames:
         print(frame)
-        time.sleep(round(random.uniform(0.4,0.7),1)) # Generates a random float value between 0.4 and 0.7, returning 1 decimal place
+        time.sleep(round(random.uniform(0.4,0.7),1)) 
+        # Generates a random float value between 0.4 and 0.7, returning 1 decimal place
         clear()
 
 def clear():
@@ -103,6 +105,7 @@ def menu():
     print("1) siem link ")
     print("2) siem documents")
     print("3) Nmap")
+    print("4) Open Wireshark")
     print("--------------------------------------------")
 
 
@@ -152,7 +155,7 @@ def main():
                     simple_scan = "nmap {0}".format(ip)
                     os.system(simple_scan)
                     back = input("want to go back? Y/N? \n").lower()
-                    if back == "Y":
+                    if back == "y":
                         clear()
                         print(Banner)
                         main()
@@ -161,14 +164,13 @@ def main():
                     ver_scan = "nmap {0} -A".format(ip)
                     os.system(ver_scan)
                     back = input("want to go back Y/N? \n")
-                    if back == "Y":
+                    if back == "y":
                         clear()
                         print(Banner)
                         main()                            
-
         case "4":
-            #//     TODO Add to this 
             clear()
+            os.system("wireshark")
 
 
 clear()
