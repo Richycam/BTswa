@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <unistd.h>
+#include <termios.h> 
+#include <cctype>
 using namespace std;
 
 class menu
@@ -11,6 +13,7 @@ class menu
     string start3;
     string start4;
     string start5;       
+    string start6;
 };
 
 class siem
@@ -25,6 +28,17 @@ class choose {
     public:
     int choice;
 };
+
+
+
+void banner() {
+    std::cout << R"(
+    ############          Blue Team swiss army knife       ############
+    ############           --for Blue teamers--            ############
+    ############        https://github.com/Richycam        ############
+     )" << "\n";
+};
+
 
 
 void animation() {
@@ -102,14 +116,6 @@ void animation() {
     system("clear");
 };
 
-void return_back() {
-    system("clear");
-    // return to main menu
-}; 
-
-
-
-
 
 int main() {
 
@@ -134,24 +140,25 @@ the_menu_obj.start1 = "--------------------------------------------";
 the_menu_obj.start2 = "1) siem link";        
 the_menu_obj.start3 = "2) siem documents";
 the_menu_obj.start4 = "3) Nmap";
-the_menu_obj.start5 = "--------------------------------------------";
+the_menu_obj.start5 = "4) Wireshark";
+the_menu_obj.start6 = "--------------------------------------------";
 // i lost my sanity ok
 
 
-
-
 bool looping = true;
+// START WHILE LOOP 
 while(looping == true){
-cout << the_menu_obj.start1 <<endl; 
-cout << the_menu_obj.start2 <<endl; 
-cout << the_menu_obj.start3 <<endl; 
-cout << the_menu_obj.start4 <<endl; 
-cout << the_menu_obj.start5 <<endl; 
+
+banner();
 
 
-
-
-
+            cout << the_menu_obj.start1 <<endl; 
+            cout << the_menu_obj.start2 <<endl; 
+            cout << the_menu_obj.start3 <<endl; 
+            cout << the_menu_obj.start4 <<endl; 
+            cout << the_menu_obj.start5 <<endl; 
+            cout << the_menu_obj.start6 <<endl;
+            
 int choose;
     cout << "choose : "; 
         cin >> choose; 
@@ -159,45 +166,65 @@ int choose;
 if (choose == 1){ 
     system("clear");
         cout << siem_obj.link <<endl;
-        cout << "\n";
-        sleep(10);
+        string check;
+        cout << "y) to go back \n";
+           cin >> check;      
+        if (check == "y"){    
         system("clear");
         continue;
+        }
+
 
 } else if (choose == 2){   
         system("clear");
         if (siem_obj.tool == "kibana"){
                 cout << "https://www.elastic.co/guide/en/kibana/current/index.html"<<endl;
-                sleep(10);
-                system("clear");
-                continue;
+                    string check;
+                        cout << "y) to go back \n";
+                         cin >> check;
+                        if (check == "y"){
+                            system("clear");
+                            continue;
+                    }
+                        
                 
+                    } else if (siem_obj.tool == "splunk"){
+                        cout << "https://docs.splunk.com/Documentation" <<endl;
+                        string check;
+                        cout << "y) to go back \n";
+                            cin >> check;
+                        system("clear");
+                        continue;
 
 
-        } else if (siem_obj.tool == "splunk"){
-            cout << "https://docs.splunk.com/Documentation" <<endl;
-            sleep(10);
-            system("clear");
-            continue;
-} else if (siem_obj.tool == 3){
+} else if (choose == 3){
+        string ip;
+            cout << "ip to nmap?";
+                cin >> ip;
+
         int nmap;
             cout << "scan type?" <<endl;
             cout << "1) simple " <<endl;
-            cout << "2) version scan" <<endl; 
-                cin >> nmap;
-        int ip; 
-            cout << "ip address to scan?"<<endl;
-                cin >> ip;
+            cout << "2) version scan" <<endl;  
+            cout << "3) vuln scan" <<endl;
+                            cin >> nmap;
+                        system("clear");
+                                switch(nmap){
+                                case 1:
+                                    system("nmap");
+                                break;
+                                case 2:
+                                    system("nmap");
+                                break;
+                                continue;
+                                }
 
-        sleep(10);
-        system("clear");
-        continue;
-            
-        }
+}else if(choose == 4){
+    system("wireshark");
+}
 }//while loop 
 return 0;
-    }
-}           
-
+}
+}//main
 
 
