@@ -85,39 +85,32 @@ banner.Header = """
 
 def animation():
 
-    frames = [    """
-
-
-               8      go~~~os   go~~~os      8
-               8    ,8`     '8_8`     '8.    8
-               8    8`   _   '8`   _   '8    8
-               8    8   !@!   8   !@!   8    8
-               8    8i       /8\       i8    8
-               8     8s     g8 8s     s8     8
-               8      dooooo`8_8'ooooob      8
-               8     d!      'V`      !b     8
-               8     8        ~        8     8
-               8     8                 8     8
-               8   ] 8                 8 [   8
-               8 [ ] 8                 8 [ ] 8
-               8 [ ] !8               8| [ ] 8
-
+    frames = [ 
+    """
+    BTSWA 
     """,
     """
-               8      go~~~os   go~~~os      8
-               8    ,8`     '8_8`     '8.    8
-               8    8`   _   '8`   _   '8    8
-               8    8   !@!   8   !@!   8    8
-               8    8i       /8\       i8    8
-               8     8s     g8 8s     s8     8
-               8      dooooo`8_8'ooooob      8
-               8     d!      'V`      !b     8
-               8     8        ~        8     8
-               8     8                 8     8
-               8   ] 8                 8 [   8
-               8 [ ] 8                 8 [ ] 8
-               8 [ ] !8               8| [ ] 8
-                            BTSWA
+    BTSWA - Blue
+    """,
+    """
+    BTSWA - Blue Team
+    """,
+    """
+    BTSWA - Blue Team Swiss
+    """,
+     """
+    BTSWA - Blue Team Swiss Army
+    """,
+         """
+    BTSWA - Blue Team Swiss Army Knife
+    """,
+    """
+    BTSWA - Blue Team Swiss Army Knife
+                            https://github.com/Richycam
+    """,
+    """
+    BTSWA - Blue Team Swiss Army Knife
+                            https://github.com/Richycam
     """,
  ]
 
@@ -183,10 +176,7 @@ def menu():
     print("6) World map")
     print("--------------------------------------------")
 
-
-def main():
-    ban_ani = True
-    while ban_ani:
+def ban_animate():
         print(banner.Banner1)
         time.sleep(0.5)
         clear()
@@ -194,47 +184,57 @@ def main():
         time.sleep(0.5)
         print(banner.Banner1)
         clear()
+
+def go_home():
+    back = input("go back? Y/N? \n ").lower
+    if back == "y":
+        clear()
+        
+
+
+def choose_1():
+    clear()
+    print(siem.get_tool())
+    print ("\n")
+
+
+
+def main():
+    ban_ani = True
+    while ban_ani:
+        ban_animate()
         ban_ani = False
-        continue
     loop_all = True
     while loop_all:
         clear()
         print(banner.Header)
         menu()
+        
         main_cntrl = input("choose usage \n")
+        
         match main_cntrl:
             case "1":
-                clear()
-                print(siem.get_tool())
-                print ("\n")
-                back = input("go back? Y/N? \n ").lower
-                if back == "y":
-                    clear()
-                    continue
+                choose_1()
+                go_home()
+                continue
 
             case "2":
                 docs = siem.get_tool()
                 if docs == "kibana" or docs == "elastic": 
                         print("https://www.elastic.co/guide/index.html?utm_campaign=Google-B-EMEA-UKI-Exact&utm_content=Brand-Core-Documentation&utm_source=google&utm_medium=cpc&device=c&utm_term=elastic%20documentation&gad_source=1&gclid=EAIaIQobChMIsuHa15OuiAMV6JtQBh2tHgypEAAYASAAEgKobvD_BwE") 
                         print ("\n")
-                        back = input("go back? Y/N?")
-                        if back == "y":
-                            clear()
-                            continue
+                        go_home()
+                        continue
                 elif docs == "splunk":
                         print("https://docs.splunk.com/Documentation") 
                         print ("\n")
-                        back = input("go back? Y/N?").lower()
-                        if back == "y":
-                            clear()
-                            continue
+                        go_home()
+                        continue
                 elif docs == "velociraptor":
                     print("https://docs.velociraptor.app/docs/")
                     print ("\n")
-                    back = input("go back? Y/N?").lower()
-                    if back == "y":
-                        clear()
-                        continue
+                    go_home()
+                    continue
 
             case "3":
                 clear()
@@ -249,27 +249,21 @@ def main():
                         simple_scan = "nmap {0}".format(ip)
                         os.system(simple_scan)
                         print ("\n")
-                        back = input("want to go back? Y/N? \n").lower()
-                        if back == "y":
-                            clear()
-                            continue
+                        go_home()
+                        continue
                     case "2":
                         clear()
                         ver_scan = "nmap {0} -A".format(ip)
                         os.system(ver_scan)
                         print ("\n")
-                        back = input("want to go back Y/N? \n")
-                        if back == "y":
-                            clear()
-                            continue                            
+                        go_home()
+                        continue                            
             case "4":
                 clear()
                 os.system("wireshark")
                 print ("\n")
-                back = input("want to go back Y/N? \n").lower
-                if back == "y":
-                    clear()
-                    continue
+                go_home()
+                continue
             case "5":
                 ai = True
                 while ai:
@@ -281,7 +275,7 @@ def main():
                         clear()
                         continue  
                     client = OpenAI(
-                        #api_key=api_keyai,
+                        api_key=api_keyai,
                     )
                     completion = client.chat.completions.create(
                         messages=[
@@ -294,25 +288,21 @@ def main():
                     )
                     print("GPT:",completion.choices[0].message.content)
                     print ("\n")
-                    back = input("want to go back Y/N? \n").lower
-                    if back == "y":
-                        clear()
-                        ai = False
-                        continue  
-                    else:
-                        continue
+                    go_home()
+                    clear()
+                    ai = False
+                    continue  
             case "6":
                 clear()
                 print(map.map1)
                 print("\n")
-                back = input("want to go back Y/N? \n").lower
-                if back == "y":
-                    continue          
+                go_home()
+                continue          
 
 clear() 
 animation()
-tool = input(str("tool name? \n")).lower()
-link = input("tool link? \n").lower()
+tool = input(str("SIEM tool name? \n")).lower()
+link = input("SIEM tool link? \n").lower()
 siem = siem(tool,link)
 clear()
 main()
