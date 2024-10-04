@@ -161,18 +161,24 @@ map.map1 = """
             |     |     |     |     |     |     |     |     |     |     |     |     |
         180   150W  120W  90W   60W   30W   000   30E   60E   90E   120E  150E  180
         -----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----
+        
+        
+        FOR THE INTERACTIVE MAP
+        you@you> telnet mapscii.me
+        in another terminal 
         """
 
 def menu():
     print(banner.Banner1)
     print("--------------------------------------------")
     print(siem.get_tool())    
-    print("1) siem link ")
-    print("2) siem documents")
+    print("1) SIEM link ")
+    print("2) SIEM documents")
     print("3) Nmap (Linux)")
     print("4) Open Wireshark(linux)")
     print("5) AI Tool ")
     print("6) World map")
+    print("7) Password to wordlist checking tool")
     print("--------------------------------------------")
 
 def ban_animate():
@@ -297,6 +303,15 @@ def main():
                 print("\n")
                 go_home()
                 continue          
+            case "7":
+                paswd = input("password to check \n")
+                wrdlist = input("Wordlist to check against \n")
+                clear()
+                print("If the console returns True, your password is in this wordlist")
+                print(paswd in wrdlist)
+                print("\n")
+                go_home()
+                continue
 
 clear() 
 animation()
