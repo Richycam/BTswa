@@ -50,11 +50,9 @@ banner.Banner1 = """
                               ----\   |   /----
                                    | -|- |
                                   /   |   \      
-
     """
 
 banner.Banner2 = """
-
                            |-._`-._ :| |: _.-'_.-|
                            |   `-._`:| |:`_.-'   |
                            |-------`-' '-'-------|
@@ -65,14 +63,13 @@ banner.Banner2 = """
          \------____-------___--__---------__--___-------____------/
           \//////// / / / / / \   _-------_   / \ \ \ \ \ \\\\\\\\/
             \////-/-/------/_/_| /___   ___\ |_\_\------\-\-\\\\/
-              --//// / /  /  //|| (-)\ /(-) ||\\  \  \ \ \\\\--
+              --//// / /  /  //||  - \ / - ||\\  \  \ \ \\\\--
                    ---__/  // /| \_  /V\  _/ |\ \\  \__---
                        -//  / /\_ ------- _/\ \  \\-
                           \_/_/ /\---------/\ \_\_/
                               ----\   |   /----
                                    | -|- |
                                   /   |   \      
-
     """
    
 banner.Header = """
@@ -88,19 +85,11 @@ def animation():
     """
     BTSWA 
     """,
-    """
-    BTSWA - Blue
-    """,
+
     """
     BTSWA - Blue Team
     """,
     """
-    BTSWA - Blue Team Swiss
-    """,
-     """
-    BTSWA - Blue Team Swiss Army
-    """,
-         """
     BTSWA - Blue Team Swiss Army Knife
     """,
     """
@@ -112,9 +101,6 @@ def animation():
                             https://github.com/Richycam
     """,
  ]
-
-
-
 
     for frame in frames:
         print(frame)
@@ -175,7 +161,7 @@ def menu():
     print("1) SIEM link ")
     print("2) SIEM documents")
     print("3) Nmap (Linux)")
-    print("4) Open Wireshark(linux)")
+    print("4) Open Wireshark (linux)")
     print("5) AI Tool ")
     print("6) World map")
     print("7) Password to wordlist checking tool")
@@ -196,93 +182,69 @@ def go_home():
         clear()
         
 
-
 def choose_1():
     clear()
     print(siem.get_tool())
     print ("\n")
+    go_home()
+  
+def choose_2():
+    docs = siem.get_tool()
+    if docs == "kibana" or docs == "elastic": 
+        print("https://www.elastic.co/guide/index.html?utm_campaign=Google-B-EMEA-UKI-Exact&utm_content=Brand-Core-Documentation&utm_source=google&utm_medium=cpc&device=c&utm_term=elastic%20documentation&gad_source=1&gclid=EAIaIQobChMIsuHa15OuiAMV6JtQBh2tHgypEAAYASAAEgKobvD_BwE") 
+        print ("\n")
+        go_home()
+    elif docs == "splunk":
+        print("https://docs.splunk.com/Documentation") 
+        print ("\n")
+        go_home()
+    elif docs == "velociraptor":
+        print("https://docs.velociraptor.app/docs/")
+        print ("\n")
+        go_home()
 
+def choose_3():
+    clear()
+    ip = input("ip to scan \n")
+    print("scan type") 
+    print("1) simple scan")
+    print("2) version detector")
+    scan_type = input("")
+    match scan_type:
+        case "1":
+            clear()
+            simple_scan = "nmap {0}".format(ip)
+            os.system(simple_scan)
+            print ("\n")
+            go_home()
+                       
+        case "2":
+            clear()
+            ver_scan = "nmap {0} -A".format(ip)
+            os.system(ver_scan)
+            print ("\n")
+            go_home()
 
+def choose_4():
+    clear()
+    os.system("wireshark")
+    print ("\n")
+    go_home()
 
-def main():
-    ban_ani = True
-    while ban_ani:
-        ban_animate()
-        ban_ani = False
-    loop_all = True
-    while loop_all:
+def choose_5():                    
+    ai = True   
+    while ai:
         clear()
-        print(banner.Header)
-        menu()
-        
-        main_cntrl = input("choose usage \n")
-        
-        match main_cntrl:
-            case "1":
-                choose_1()
-                go_home()
-                continue
-
-            case "2":
-                docs = siem.get_tool()
-                if docs == "kibana" or docs == "elastic": 
-                        print("https://www.elastic.co/guide/index.html?utm_campaign=Google-B-EMEA-UKI-Exact&utm_content=Brand-Core-Documentation&utm_source=google&utm_medium=cpc&device=c&utm_term=elastic%20documentation&gad_source=1&gclid=EAIaIQobChMIsuHa15OuiAMV6JtQBh2tHgypEAAYASAAEgKobvD_BwE") 
-                        print ("\n")
-                        go_home()
-                        continue
-                elif docs == "splunk":
-                        print("https://docs.splunk.com/Documentation") 
-                        print ("\n")
-                        go_home()
-                        continue
-                elif docs == "velociraptor":
-                    print("https://docs.velociraptor.app/docs/")
-                    print ("\n")
-                    go_home()
-                    continue
-
-            case "3":
-                clear()
-                ip = input("ip to scan \n")
-                print("scan type") 
-                print("1) simple scan")
-                print("2) version detector")
-                scan_type = input("")
-                match scan_type:
-                    case "1":
-                        clear()
-                        simple_scan = "nmap {0}".format(ip)
-                        os.system(simple_scan)
-                        print ("\n")
-                        go_home()
-                        continue
-                    case "2":
-                        clear()
-                        ver_scan = "nmap {0} -A".format(ip)
-                        os.system(ver_scan)
-                        print ("\n")
-                        go_home()
-                        continue                            
-            case "4":
-                clear()
-                os.system("wireshark")
-                print ("\n")
-                go_home()
-                continue
-            case "5":
-                ai = True
-                while ai:
-                    clear()
-                    print("(y to return)")
-                    askai = input("ChatGPT 3.5 Turbo>>  ")
-                    if askai == "y":
-                        ai = False
-                        clear()
-                        continue  
-                    client = OpenAI(
+        print("(y to return)")
+        askai = input("ChatGPT>>  ")
+        if askai == "y":
+            ai = False
+            clear()
+            continue  
+        client = OpenAI(
                         api_key=api_keyai,
                     )
-                    completion = client.chat.completions.create(
+        completion = client.chat.completions.create(
                         messages=[
                             {
                                 "role": "system",
@@ -291,27 +253,66 @@ def main():
                         ],
                         model="gpt-3.5-turbo",
                     )
-                    print("GPT:",completion.choices[0].message.content)
-                    print ("\n")
-                    go_home()
-                    clear()
-                    ai = False
-                    continue  
+        print("GPT:",completion.choices[0].message.content)
+        print ("\n")
+        go_home()
+        clear()
+        ai = False
+
+def choose_6():
+    clear()
+    print(map.map1)
+    print("\n")
+    go_home()
+
+def choose_7():
+    paswd = input("password to check \n")
+    wrdlist = input("Wordlist to check against \n")
+    clear()
+    print("If the console returns True, your password is in this wordlist")
+    print(paswd in wrdlist)
+    print("\n")
+    go_home()
+
+def main():
+    ban_ani = True
+    
+    while ban_ani:
+        ban_animate()
+        ban_ani = False
+    
+    loop_all = True
+    
+    while loop_all:
+        clear()
+        print(banner.Header)
+        menu()
+        
+        main_cntrl = input("choose usage \n")
+      
+        match main_cntrl:
+            case "1":
+                choose_1()
+                continue
+            case "2":
+                choose_2()
+                continue
+            case "3":
+                choose_3()
+                continue                            
+            case "4":
+                choose_4()
+                continue
+            #case "5":  
+                #choose_5()
+                #continue
             case "6":
-                clear()
-                print(map.map1)
-                print("\n")
-                go_home()
+                choose_6()
                 continue          
             case "7":
-                paswd = input("password to check \n")
-                wrdlist = input("Wordlist to check against \n")
-                clear()
-                print("If the console returns True, your password is in this wordlist")
-                print(paswd in wrdlist)
-                print("\n")
-                go_home()
+                choose_7()
                 continue
+
 
 clear() 
 animation()
