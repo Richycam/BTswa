@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <string>
 #include <unistd.h>
@@ -118,7 +117,7 @@ void flw_ctrl(){
     if (check == "y"){    
     system("clear");
 }
-}
+};
 
 int main() {
 
@@ -169,29 +168,28 @@ int choose;
     cout << "choose : "; 
         cin >> choose; 
 
-if (choose == 1){ 
+switch(choose){
+  case 1: 
     system("clear");
         cout << siem_obj.link <<endl;
         flw_ctrl();
+        break;
         continue;
 
-
-
-} else if (choose == 2){   
+    case 2:  
         system("clear");
         if (siem_obj.tool == "kibana"){
-                cout << "https://www.elastic.co/guide/en/kibana/current/index.html"<<endl;
+                cout << "https://www.elastic.co/guide/en/kibana/current/index.html"<<endl;}
                     string check;
                     flw_ctrl();         
                     continue;
+                    }else if (siem_obj.tool == "splunk"){
+                    cout << "https://docs.splunk.com/Documentation" <<endl;
                     }
-                        
-                
-                    } else if (siem_obj.tool == "splunk"){
-                        cout << "https://docs.splunk.com/Documentation" <<endl;
-                        flw_ctrl();
-                        continue;
-} else if (choose == 3){
+                    flw_ctrl();
+                    continue;
+    break;
+    case 3:
         string ip;
             cout << "ip to nmap?";
                 cin >> ip;
@@ -212,11 +210,12 @@ if (choose == 1){
                                 flw_ctrl();
                                 continue;
                                 }
-
-}else if(choose == 4){
+break;
+    case 4:
     system("wireshark");
     flw_ctrl();
-}else if(choose == 5){
+break;
+    case 5:
     std::cout << R"(
 
             180   150W  120W  90W   60W   30W   000   30E   60E   90E   120E  150E  180
@@ -260,20 +259,13 @@ if (choose == 1){
  
  )" << "\n";
  flw_ctrl();
- continue;
+ 
+continue;
+break;
+
+
 }
 
 
-
-
-
-}//while loop 
 return 0;
-}
-
-
-        
-    
-
-
-
+} 
