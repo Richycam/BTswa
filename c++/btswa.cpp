@@ -34,7 +34,7 @@ class choose {
 
 
 
-banner  {
+void banner()  {
     std::cout << R"(
                            |-._`-._ :| |: _.-'_.-|
                            |   `-._`:| |:`_.-'   |
@@ -121,8 +121,50 @@ void flw_ctrl(){
 }
 };
 
+void choose_1(){
+    system("clear");
+    cout << siem_obj.link <<endl;
+    flw_ctrl();
+}
+
+void choose_2(){
+    system("clear");
+        if (siem_obj.tool == "kibana"){
+                cout << "https://www.elastic.co/guide/en/kibana/current/index.html"<<endl;}
+                    flw_ctrl();         
+                    continue;
+                    if (siem_obj.tool == "splunk"){
+                    cout << "https://docs.splunk.com/Documentation" <<endl;
+                    }
+                    flw_ctrl();
+
+}
 
 
+void choose_3(){
+            string ip;
+            cout << "ip to nmap?";
+                cin >> ip;
+        int nmap;
+            cout << "scan type?" <<endl;
+            cout << "1) simple " <<endl;
+            cout << "2) version scan" <<endl;  
+            cout << "3) vuln scan" <<endl;
+                            cin >> nmap;
+                        system("clear");
+                                switch(nmap){
+                                case 1:
+                                    system("nmap");
+                                break;
+                                case 2:
+                                    system("nmap");
+                                break;
+                                flw_ctrl();
+                                continue;
+                                }
+
+
+}
 
 
 
@@ -178,49 +220,21 @@ int choose;
 switch(choose){
     case 1:
     { 
-    system("clear");
-        cout << siem_obj.link <<endl;
-        flw_ctrl();
+        choose_1();
         break;
     }
-        continue;
-
+continue;
     case 2:  
     {
-        system("clear");
-        if (siem_obj.tool == "kibana"){
-                cout << "https://www.elastic.co/guide/en/kibana/current/index.html"<<endl;}
-                    flw_ctrl();         
-                    continue;
-                    if (siem_obj.tool == "splunk"){
-                    cout << "https://docs.splunk.com/Documentation" <<endl;
-                    }
-                    flw_ctrl();
-                    break;
-                    continue;
-    }                
-        case 3:
+    choose_2();
+    break;   
+    }               
+continue;
+    case 3:
     {    
-        string ip;
-            cout << "ip to nmap?";
-                cin >> ip;
-        int nmap;
-            cout << "scan type?" <<endl;
-            cout << "1) simple " <<endl;
-            cout << "2) version scan" <<endl;  
-            cout << "3) vuln scan" <<endl;
-                            cin >> nmap;
-                        system("clear");
-                                switch(nmap){
-                                case 1:
-                                    system("nmap");
-                                break;
-                                case 2:
-                                    system("nmap");
-                                break;
-                                flw_ctrl();
-                                continue;
-                                }
+    choose_3();
+    break;
+    continue;
     }
 
     case 4:
@@ -285,3 +299,5 @@ continue;
 return 0;
 }
 }
+
+
