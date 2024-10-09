@@ -32,7 +32,9 @@ class choose {
 };
 
 
-void banner() {
+
+
+banner  {
     std::cout << R"(
                            |-._`-._ :| |: _.-'_.-|
                            |   `-._`:| |:`_.-'   |
@@ -119,6 +121,11 @@ void flw_ctrl(){
 }
 };
 
+
+
+
+
+
 int main() {
 
 string tool_type_impt;
@@ -169,27 +176,31 @@ int choose;
         cin >> choose; 
 
 switch(choose){
-  case 1: 
+    case 1:
+    { 
     system("clear");
         cout << siem_obj.link <<endl;
         flw_ctrl();
         break;
+    }
         continue;
 
     case 2:  
+    {
         system("clear");
         if (siem_obj.tool == "kibana"){
                 cout << "https://www.elastic.co/guide/en/kibana/current/index.html"<<endl;}
-                    string check;
                     flw_ctrl();         
                     continue;
-                    }else if (siem_obj.tool == "splunk"){
+                    if (siem_obj.tool == "splunk"){
                     cout << "https://docs.splunk.com/Documentation" <<endl;
                     }
                     flw_ctrl();
+                    break;
                     continue;
-    break;
-    case 3:
+    }                
+        case 3:
+    {    
         string ip;
             cout << "ip to nmap?";
                 cin >> ip;
@@ -210,12 +221,16 @@ switch(choose){
                                 flw_ctrl();
                                 continue;
                                 }
-break;
+    }
+
     case 4:
+    {
     system("wireshark");
     flw_ctrl();
-break;
+    break;
+    }
     case 5:
+    {
     std::cout << R"(
 
             180   150W  120W  90W   60W   30W   000   30E   60E   90E   120E  150E  180
@@ -259,13 +274,14 @@ break;
  
  )" << "\n";
  flw_ctrl();
- 
-continue;
 break;
-
-
+}
+continue;
 }
 
 
+
+
 return 0;
-} 
+}
+}
