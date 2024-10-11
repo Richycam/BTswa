@@ -1,15 +1,10 @@
 #//     CREDS https://github.com/vpwl -> Merged animations
 #//     CREDS https://github.com/IanUmney -> Code suggestions
 
-#// unhash ai parts to use them 
-#// BTSWA with AI 
 import time
 import os
 import random
 import sys
-#from openai import OpenAI
-#api_keyai = 
-#you need a openai api key to make this work 
 
 class siem:
     def __init__(self , tool, link):
@@ -74,7 +69,7 @@ banner.Banner2 = """
    
 banner.Header = """
     ############          Blue Team Swiss Army Knife       ############
-    ############            ===||:::::::::::::::>          ############
+    ############                     .py                   ############
     ############         https://github.com/Richycam       ############
 """
 
@@ -150,8 +145,8 @@ map.map1 = """
         
         
         FOR THE INTERACTIVE MAP
-        you@you> telnet mapscii.me
-        in another terminal 
+        
+        Type I
         """
 
 def menu():
@@ -161,10 +156,11 @@ def menu():
     print("1) SIEM link ")
     print("2) SIEM documents")
     print("3) Nmap (Linux)")
-    print("4) Open Wireshark (linux)")
-    print("5) AI Tool ")
-    print("6) World map")
-    print("7) Password to wordlist checking tool")
+    print("4) Open Wireshark (Linux)")
+    print("5) TCPDump (Linux) ")
+    print("6) Interactive World map (Linux)")
+    print("7) World map")
+    print("8) Password to wordlist checking tool")
     print("--------------------------------------------")
 
 def ban_animate():
@@ -180,7 +176,7 @@ def go_home():
     back = input("go back? Y/N? \n ").lower
     if back == "y":
         clear()
-        
+
 
 def choose_1():
     clear()
@@ -232,40 +228,30 @@ def choose_4():
     go_home()
 
 def choose_5():                    
-    ai = True   
-    while ai:
-        clear()
-        print("(y to return)")
-        askai = input("ChatGPT>>  ")
-        if askai == "y":
-            ai = False
-            clear()
-            continue  
-        client = OpenAI(
-                        api_key=api_keyai,
-                    )
-        completion = client.chat.completions.create(
-                        messages=[
-                            {
-                                "role": "system",
-                                "content":askai,
-                            }
-                        ],
-                        model="gpt-3.5-turbo",
-                    )
-        print("GPT:",completion.choices[0].message.content)
-        print ("\n")
-        go_home()
-        clear()
-        ai = False
+    clear()
+    os.system("sudo tcpdump -c 30 --interface any")
+    go_home()
 
 def choose_6():
+    clear()
+    print("Keyboard shortcuts \n \n")
+    print("Arrows up, down, left, right to scroll around\n")
+    print("Press a or z to zoom in and out\n")
+    print("Press c to switch to block character mode\n")
+    print("\nPress q to quit")
+    input("\nEnter start interactive map").lower   
+    clear()
+    os.system("mapscii")
+
+    
+
+def choose_7():
     clear()
     print(map.map1)
     print("\n")
     go_home()
 
-def choose_7():
+def choose_8():
     paswd = input("password to check \n")
     wrdlist = input("Wordlist to check against \n")
     clear()
@@ -303,16 +289,18 @@ def main():
             case "4":
                 choose_4()
                 continue
-            #case "5":  
-                #choose_5()
-                #continue
+            case "5":  
+                choose_5()
+                continue
             case "6":
                 choose_6()
                 continue          
             case "7":
                 choose_7()
                 continue
-
+            case "8":
+                choose_8()
+                continue 
 
 clear() 
 animation()
