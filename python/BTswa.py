@@ -262,13 +262,14 @@ def choose_8():
 def choose_9():
     srv_start = "python3 -m http.server 9000"
     print(" ctrl + c to shut down server ")
-    print ("check http://localhost:9000")
     os.system(srv_start)
     ("\n")
     go_home()
 
 def choose_10():
-    os.system("python -m http.server /server/index.html")
+    print("check /server on localhost port 8000 \n or http://localhost:8000 ")
+    print("\n ctrl + c to shutdown the server ")
+    os.system("python3 -m http.server 8000")
 def main():
     ban_ani = True
     
@@ -319,4 +320,3 @@ link = input("SIEM tool link? \n").lower()
 siem = siem(tool,link)
 clear()
 main()
-
