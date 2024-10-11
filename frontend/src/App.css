@@ -1,0 +1,42 @@
+/* src/App.css */
+
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.content {
+  padding: 20px;
+}
+
+.feature-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.feature-container h2 {
+  color: #333;
+}
+
+.feature-container input,
+.feature-container select,
+.feature-container textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 15px 0;
+  box-sizing: border-box;
+}
+
+.feature-container button {
+  padding: 10px 20px;
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.feature-container button:hover {
+  background-color: #21a1f1;
+}
