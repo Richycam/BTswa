@@ -5,7 +5,6 @@
 ## // map
 # // sudo snap install mapscii
 
-
 import time
 import os
 import random
@@ -155,6 +154,7 @@ def menu():
     print("                      7) World map")
     print("                      8) Password to wordlist checking tool")
     print("                      9) Start Python HTTP Sever ")
+    print("                      10 Start BTSWA web app")
     print("        ---------------------------------------------------------------")
 
 def ban_animate():
@@ -266,6 +266,9 @@ def choose_9():
     os.system(srv_start)
     ("\n")
     go_home()
+
+def choose_10():
+    os.system("python -m http.server /server/index.html")
 def main():
     ban_ani = True
     
@@ -306,7 +309,9 @@ def main():
                 choose_8()
                 continue 
             case "9":
-                choose_9()               
+                choose_9()  
+            case "10":
+                choose_10()             
 clear() 
 animation()
 tool = input(str("SIEM tool name? \n")).lower()
@@ -314,3 +319,4 @@ link = input("SIEM tool link? \n").lower()
 siem = siem(tool,link)
 clear()
 main()
+
