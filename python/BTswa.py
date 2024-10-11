@@ -1,10 +1,16 @@
 #//     CREDS https://github.com/vpwl -> Merged animations
 #//     CREDS https://github.com/IanUmney -> Code suggestions
 
+### // dependancies 
+## // map
+# // sudo snap install mapscii
+
+
 import time
 import os
 import random
 import sys
+
 
 class siem:
     def __init__(self , tool, link):
@@ -42,9 +48,7 @@ banner.Banner1 = """
                    ---__/  // /| \_  /V\  _/ |\ \\  \__---
                        -//  / /\_ ------- _/\ \  \\-
                           \_/_/ /\---------/\ \_\_/
-                              ----\   |   /----
-                                   | -|- |
-                                  /   |   \      
+                              ----\   |   /----     
     """
 
 banner.Banner2 = """
@@ -62,9 +66,7 @@ banner.Banner2 = """
                    ---__/  // /| \_  /V\  _/ |\ \\  \__---
                        -//  / /\_ ------- _/\ \  \\-
                           \_/_/ /\---------/\ \_\_/
-                              ----\   |   /----
-                                   | -|- |
-                                  /   |   \      
+                              ----\   |   /----  
     """
    
 banner.Header = """
@@ -80,23 +82,14 @@ def animation():
     """
     BTSWA 
     """,
-
-    """
-    BTSWA - Blue Team
-    """,
     """
     BTSWA - Blue Team Swiss Army Knife
-    """,
-    """
-    BTSWA - Blue Team Swiss Army Knife
-                            https://github.com/Richycam
     """,
     """
     BTSWA - Blue Team Swiss Army Knife
                             https://github.com/Richycam
     """,
  ]
-
     for frame in frames:
         print(frame)
         time.sleep(round(random.uniform(0.6,0.9),1)) 
@@ -144,24 +137,25 @@ map.map1 = """
         -----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----
         
         
-        FOR THE INTERACTIVE MAP
-        
-        Type I
         """
 
 def menu():
+
     print(banner.Banner1)
-    print("--------------------------------------------")
-    print(siem.get_tool())    
-    print("1) SIEM link ")
-    print("2) SIEM documents")
-    print("3) Nmap (Linux)")
-    print("4) Open Wireshark (Linux)")
-    print("5) TCPDump (Linux) ")
-    print("6) Interactive World map (Linux)")
-    print("7) World map")
-    print("8) Password to wordlist checking tool")
-    print("--------------------------------------------")
+    print(banner.Header)
+    print("\n")    
+    print("tool ->" , siem.get_tool()) 
+    print("       ---------------------------------------------------------------")
+    print("                      1) SIEM link ")
+    print("                      2) SIEM documents")
+    print("                      3) Nmap (Linux)")
+    print("                      4) Open Wireshark (Linux)")
+    print("                      5) TCPDump (Linux) ")
+    print("                      6) Interactive World map (Linux)")
+    print("                      7) World map")
+    print("                      8) Password to wordlist checking tool")
+    print("                      9) Start Python HTTP Sever ")
+    print("        ---------------------------------------------------------------")
 
 def ban_animate():
         print(banner.Banner1)
@@ -176,6 +170,12 @@ def go_home():
     back = input("go back? Y/N? \n ").lower
     if back == "y":
         clear()
+
+def check(word, list):
+    if word in list:
+        print("The word is in the list!")
+    else:
+        print("The password is not in the list!")
 
 
 def choose_1():
@@ -255,11 +255,17 @@ def choose_8():
     paswd = input("password to check \n")
     wrdlist = input("Wordlist to check against \n")
     clear()
-    print("If the console returns True, your password is in this wordlist")
-    print(paswd in wrdlist)
+    check (paswd,wrdlist)
     print("\n")
     go_home()
 
+def choose_9():
+    srv_start = "python3 -m http.server 9000"
+    print(" ctrl + c to shut down server ")
+    print ("check http://localhost:9000")
+    os.system(srv_start)
+    ("\n")
+    go_home()
 def main():
     ban_ani = True
     
@@ -271,9 +277,7 @@ def main():
     
     while loop_all:
         clear()
-        print(banner.Header)
         menu()
-        
         main_cntrl = input("choose usage \n")
       
         match main_cntrl:
@@ -301,7 +305,8 @@ def main():
             case "8":
                 choose_8()
                 continue 
-
+            case "9":
+                choose_9()               
 clear() 
 animation()
 tool = input(str("SIEM tool name? \n")).lower()
