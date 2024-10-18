@@ -1,7 +1,7 @@
 ## BTSWA
 Blue Team Swiss Army Knife.
 # desgined for linux users
-install Depndacies (providing you have snap)
+install Dependencies (providing you have snap)
 ```sh
 sudo snap mapscii
 ```
