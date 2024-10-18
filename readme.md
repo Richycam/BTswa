@@ -1,7 +1,23 @@
-# Blue Team Swiss Army Knife 
+## BTSWA
+Blue Team Swiss Army Knife.
+# desgined for linux users
+install Depndacies (providing you have snap)
+```sh
+sudo snap mapscii
+```
 
-Python version is designed to be used with python3
+for Python
+```sh
+python3 btswa.py
+```
+for C++
+```sh
+G++ btswa.cpp
+./a.out
+```
 
-C++ needs to be compiled into an executeable (tested with G++)
-                     
-
+some development notes
+--
+-Looking for a frontend dev to create a python http server 
+-C++ and python versions should both (mostly) work well
+-Check out the React.js Fork of BTSWA at https://github.com/Bootes22/BTswa 
