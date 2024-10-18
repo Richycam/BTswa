@@ -51,11 +51,10 @@ void banner()  {
                        -//  / /\_ ------- _/\ \  \\-
                           \_/_/ /\---------/\ \_\_/
                               ----\   |   /----
-                                   | -|- |
-                                  /   |   \  
+                                   | -|- | 
     ############          Blue Team swiss army knife       ############
-    ############              lightweight version 
-                                    C++                    ############
+    /|\/|\/|\/|\             lightweight version           /|\/|\/|\/|\
+    ############                    C++                    ############
     ############        https://github.com/Richycam        ############
      )" << "\n";
 };
@@ -80,7 +79,7 @@ void animation() {
                           \_/_/ /\---------/\ \_\_/
                               ----\   |   /----
                                    | -|- |
-                                  /   |   \  
+
 
     )" << "\n";
     sleep(1);
@@ -102,7 +101,7 @@ void animation() {
                           \_/_/ /\---------/\ \_\_/
                               ----\   |   /----
                                    | -|- |
-                                  /   |   \   
+
 
     )" << "\n";
     sleep(1);
@@ -120,52 +119,6 @@ void flw_ctrl(){
     system("clear");
 }
 };
-
-void choose_1(){
-    system("clear");
-    cout << siem_obj.link <<endl;
-    flw_ctrl();
-}
-
-void choose_2(){
-    system("clear");
-        if (siem_obj.tool == "kibana"){
-                cout << "https://www.elastic.co/guide/en/kibana/current/index.html"<<endl;}
-                    flw_ctrl();         
-                    continue;
-                    if (siem_obj.tool == "splunk"){
-                    cout << "https://docs.splunk.com/Documentation" <<endl;
-                    }
-                    flw_ctrl();
-
-}
-
-
-void choose_3(){
-            string ip;
-            cout << "ip to nmap?";
-                cin >> ip;
-        int nmap;
-            cout << "scan type?" <<endl;
-            cout << "1) simple " <<endl;
-            cout << "2) version scan" <<endl;  
-            cout << "3) vuln scan" <<endl;
-                            cin >> nmap;
-                        system("clear");
-                                switch(nmap){
-                                case 1:
-                                    system("nmap");
-                                break;
-                                case 2:
-                                    system("nmap");
-                                break;
-                                flw_ctrl();
-                                continue;
-                                }
-
-
-}
-
 
 
 int main() {
@@ -189,12 +142,12 @@ menu the_menu_obj; // create object
 //attribites
  
 the_menu_obj.start1 = "--------------------------------------------"; 
-the_menu_obj.start2 = "1) siem link";        
-the_menu_obj.start3 = "2) siem documents";
-the_menu_obj.start4 = "3) Nmap";
-the_menu_obj.start5 = "4) Wireshark";
-the_menu_obj.start6 = "5) world map";
-the_menu_obj.start7 = "6) Password checker";
+the_menu_obj.start2 = "     1) Siem link";        
+the_menu_obj.start3 = "     2) Siem documents";
+the_menu_obj.start4 = "     3) Nmap (not finished)";
+the_menu_obj.start5 = "     4) Wireshark";
+the_menu_obj.start6 = "     5) World map";
+the_menu_obj.start7 = "     6) Python Server ";
 
 // i lost my sanity ok
 
@@ -202,7 +155,7 @@ the_menu_obj.start7 = "6) Password checker";
 bool looping = true;
 // START WHILE LOOP 
 while(looping == true){
-
+system("clear");
 banner();
 
             cout << siem_obj.tool <<endl;
@@ -212,6 +165,7 @@ banner();
             cout << the_menu_obj.start4 <<endl; 
             cout << the_menu_obj.start5 <<endl; 
             cout << the_menu_obj.start6 <<endl;
+            cout << the_menu_obj.start7 <<endl;
             
 int choose;
     cout << "choose : "; 
@@ -220,23 +174,57 @@ int choose;
 switch(choose){
     case 1:
     { 
-        choose_1();
-        break;
+    system("clear");
+    cout << siem_obj.link <<endl;
+    flw_ctrl();
+    break;
     }
 continue;
     case 2:  
     {
-    choose_2();
+    system("clear");
+        if (siem_obj.tool == "kibana"){
+                cout << "https://www.elastic.co/guide/en/kibana/current/index.html"<<endl;
+                    flw_ctrl();         
+                    continue;
+        }else if (siem_obj.tool == "splunk"){
+                    cout << "https://docs.splunk.com/Documentation" <<endl;
+                    flw_ctrl();
+                    continue;
+        }else if (siem_obj.tool == "tensable")
+                    cout << "https://docs.tenable.com/" <<endl;
+                    flw_ctrl();
+                    continue;
+
+
+
     break;   
     }               
 continue;
     case 3:
     {    
-    choose_3();
+                string ip;
+            cout << "ip to nmap?";
+                cin >> ip;
+        int nmap;
+            cout << "scan type?" <<endl;
+            cout << "1) simple " <<endl;
+            cout << "2) version scan" <<endl;  
+            cout << "3) vuln scan" <<endl;
+                            cin >> nmap;
+                        system("clear");
+                                switch(nmap){
+                                case 1:
+                                    system("nmap");
+                                break;
+                                case 2:
+                                    system("nmap");
+                                break;
+                                flw_ctrl();
+                                continue;
+                                }
     break;
-    continue;
     }
-
     case 4:
     {
     system("wireshark");
@@ -245,59 +233,25 @@ continue;
     }
     case 5:
     {
-    std::cout << R"(
 
-            180   150W  120W  90W   60W   30W   000   30E   60E   90E   120E  150E  180
-            |     |     |     |     |     |     |     |     |     |     |     |     |
-        90N-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-90N
-            |           . _..::__:  ,-"-"._        |7       ,     _,.__             |
-            |   _.___ _ _<_>`!(._`.`-.    /         _._     `_ ,_/  '  '-._.---.-.__|
-            |>.{     " " `-==,',._\{  \  / {)      / _ ">_,-' `                mt-2_|
-        60N-+  \_.:--.       `._ )`^-. "'       , [_/(                       __,/-' +-60N
-            | '"'     \         "    _L        oD_,--'                )     /. (|   |
-            |          |           ,'          _)_.\\._<> 6              _,' /  '   |
-            |          `.         /           [_/_'` `"(                <'}  )      |
-        30N-+           \\    .-. )           /   `-'"..' `:._          _)  '       +-30N
-            |    `        \  (  `(           /         `:\  > \  ,-^.  /' '         |
-            |              `._,   ""         |           \`'   \|   ?_)  {\         |
-            |                 `=.---.        `._._       ,'     "`  |' ,- '.        |
-        000-+                   |    `-._         |     /          `:`<_|h--._      +-000
-            |                   (        >        .     | ,          `=.__.`-'\     |
-            |                    `.     /         |     |{|              ,-.,\     .|
-            |                     |   ,'           \   / `'            ,"     \     |
-        30S-+                     |  /              |_'                |  __  /     +-30S
-            |                     | |                                  '-'  `-'   \.|
-            |                     |/                                         "    / |
-            |                     \.                                             '  |
-        60S-+                                                                       +-60S
-            |                      ,/            ______._.--._ _..---.---------._   |
-            |     ,-----"-..?----_/ )      __,-'"             "                  (  |
-            |-.._(                  `-----'                                       `-|
-        90S-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-90S
-            Map 1998 Matthew Thomas.|Freely usable as long as this|line is included.|
-            |     |     |     |     |     |     |     |     |     |     |     |     |
-        180   150W  120W  90W   60W   30W   000   30E   60E   90E   120E  150E  180
-        -----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----
-        
-        
-        FOR THE INTERACTIVE MAP
-        you@you> telnet mapscii.me
-        in another terminal  
- 
- 
- 
- )" << "\n";
- flw_ctrl();
-break;
-}
+    int ok; 
+    cout << "press enter to open the ascii map "<<endl;
+    cout << "use q to exit the map"<<endl;
+    cin >> ok;
+    system("mapscii");
+    break;
+    }
+    case 6:
+    {
+    cout << " ctrl + c to shut down server"<<endl;
+    system("python3 -m http.server 8000");
+    flw_ctrl();
+    }
 continue;
-}
-
-
-
-
 return 0;
 }
 }
+}
+
 
 
