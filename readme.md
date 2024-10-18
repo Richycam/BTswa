@@ -15,6 +15,11 @@ for C++
 G++ btswa.cpp
 ./a.out
 ```
+
+
+![Screenshot from 2024-10-18 14-27-17](https://github.com/user-attachments/assets/2832b28f-29de-401b-931b-8ae47e8f07c6)
+
+
 ![Alt Text](https://media1.tenor.com/m/tZ2Xd8LqAnMAAAAd/typing-fast.gif)
 
 some development notes
