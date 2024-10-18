@@ -15,7 +15,7 @@ for C++
 G++ btswa.cpp
 ./a.out
 ```
-![Alt Text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fimgur.com%2Fgallery%2Fglad-bachelors-degree-is-getting-put-to-good-use-bjG81PH&psig=AOvVaw3Bhk0AngjYRty_7JbZLB5G&ust=1729344229016000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKi91rWDmIkDFQAAAAAdAAAAABAE)
+![Alt Text](https://i.imgur.com/HtjBhsE.gif)
 
 some development notes
 --
