@@ -5,6 +5,7 @@
 ## // map
 # // sudo snap install mapscii
 
+
 import time
 import os
 import random
@@ -26,11 +27,11 @@ class map:
         self.map1 = map1
 
 class banner:
-    def __init__(self,Banner1,Banner2,Header):
+    def __init__(self,Banner1,Banner2,Header,Header_intro):
         self.Banner1 = Banner1 
         self.Banner2 = Banner2
         self.Header = Header
-
+        self.Header_intro = Header_intro
 
 banner.Banner1 = """
                            |-._`-._ :| |: _.-'_.-|
@@ -59,21 +60,29 @@ banner.Banner2 = """
                            |-'_.-'  :| |:  `-._`-|
          __________-------____                 ____-------__________
          \------____-------___--__---------__--___-------____------/
-          \//////// / / / / / \   _-------_   / \ \ \ \ \ \\\\\\\\/
-            \////-/-/------/_/_| /___   ___\ |_\_\------\-\-\\\\/
-              --//// / /  /  //||  - \ / - ||\\  \  \ \ \\\\--
-                   ---__/  // /| \_  /V\  _/ |\ \\  \__---
-                       -//  / /\_ ------- _/\ \  \\-
+          \//////// / / / / / \   _-------_   / \ \ \ \ \ \\\\\\\\/ 
+            \////-/-/------/_/_| /___   ___\ |_\_\------\-\-\\\\/   
+              --//// / /  /  //||  - \ / - ||\\  \  \ \ \\\\-- 
+                   ---__/  // /| \_  /V\  _/ |\ \\  \__--- 
+                       -//  / /\_ ------- _/\ \  \\- 
                           \_/_/ /\---------/\ \_\_/
                               ----\   |   /----  
     """
    
 banner.Header = """
     ############          Blue Team Swiss Army Knife       ############
-    ############                     .py                   ############
+    /|\/|\/|\/|\                    Main                   /|\/|\/|\/|\ 
+    ############                    .Py                    ############
     ############         https://github.com/Richycam       ############
 """
 
+banner.Header_intro = """
+▗▄▄▖▗▄▄▄▖▗▄▄▖▗▖ ▗▖ ▗▄▖ 
+▐▌ ▐▌ █ ▐▌   ▐▌ ▐▌▐▌ ▐▌
+▐▛▀▚▖ █  ▝▀▚▖▐▌ ▐▌▐▛▀▜▌
+▐▙▄▞▘ █ ▗▄▄▞▘▐▙█▟▌▐▌ ▐▌
+
+"""
 
 def animation():
 
@@ -153,8 +162,8 @@ def menu():
     print("                      6) Interactive World map (Linux)")
     print("                      7) World map")
     print("                      8) Password to wordlist checking tool")
-    print("                      9) Start Python HTTP Sever ")
-    print("                      10 Start BTSWA web app")
+    print("                      9) Start Python HTTP Sever (honeypot) ")
+    print("                     10) Start BTSWA web app (Still in development)")
     print("        ---------------------------------------------------------------")
 
 def ban_animate():
@@ -255,13 +264,14 @@ def choose_8():
     paswd = input("password to check \n")
     wrdlist = input("Wordlist to check against \n")
     clear()
-    check (paswd,wrdlist)
+    check(paswd,wrdlist)
     print("\n")
     go_home()
 
 def choose_9():
-    srv_start = "python3 -m http.server 9000"
-    print(" ctrl + c to shut down server ")
+    srv_port = input("Port to use?")
+    srv_start = "python3 -m http.server {0}".format(srv_port)
+    print(" ctrl + c to shut down server")
     os.system(srv_start)
     ("\n")
     go_home()
@@ -315,6 +325,7 @@ def main():
                 choose_10()             
 clear() 
 animation()
+print(banner.Header_intro)
 tool = input(str("SIEM tool name? \n")).lower()
 link = input("SIEM tool link? \n").lower()
 siem = siem(tool,link)
