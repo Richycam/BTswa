@@ -1,5 +1,6 @@
 ## BTSWA for Kali Linux
-<img width="512" alt="distributor-logo-kali-linux-icon-2048x2005-dki611fk" src="https://github.com/user-attachments/assets/35bc4c50-a609-4246-9b68-49600a1322de">
+
+<img width="75" alt="kali-linux-logo-AED181186E-seeklogo com" src="https://github.com/user-attachments/assets/bc972b7b-31dd-4613-9f2a-992775d0f059">
 
 
 
