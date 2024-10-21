@@ -5,15 +5,21 @@
 To use the BTSWA on Kali Linux we have to use a snapd workaround
 
 
-open your terminal and simply run 
+1. Open your terminal and simply run 
 
 ```sh
 user@pc~: kali_snapd_workaround1.sh
 ```
-then reboot the VM and run 
+2. then reboot the VM and run 
 ```sh
 kali_snapd_workaround2.sh
 ```
+
+3. Now It should run
+```sh
+root@user python3 btswa_kl.py
+```
+
 
 
 
