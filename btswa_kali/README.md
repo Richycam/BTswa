@@ -12,12 +12,12 @@ user@pc~: kali_snapd_workaround1.sh
 ```
 2. then reboot the VM and run 
 ```sh
-kali_snapd_workaround2.sh
+user@pc~: kali_snapd_workaround2.sh
 ```
 
 3. Now It should run
 ```sh
-root@user python3 btswa_kl.py
+user@pc~: python3 btswa_kl.py
 ```
 
 
