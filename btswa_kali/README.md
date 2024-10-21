@@ -1,5 +1,6 @@
 ## BTSWA for Kali Linux
-![OIP](https://github.com/user-attachments/assets/da98a9c2-00dc-4adf-b082-ee5a2767ff4f)
+![distributor-logo-kali-linux-icon-2048x2005-dki611fk](https://github.com/user-attachments/assets/aff3031b-46a4-43f2-873f-86c80ab3b5a2)
+
 
 
 To use the BTSWA on Kali Linux we have to use a snapd workaround
