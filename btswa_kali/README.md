@@ -1,5 +1,5 @@
 
-![BTSWAlogo](https://github.com/user-attachments/assets/3d8ccd33-cd25-4553-abb6-8a2826b30293) , ![kali-linux-backtrack-penetration-test-ubuntu-png-favpng-EXXQvBi4m9CNUGiYVtih8dvQ5](https://github.com/user-attachments/assets/46f31b82-5d02-4a46-a19b-38e150a04768)
+![BTSWAlogo](https://github.com/user-attachments/assets/3d8ccd33-cd25-4553-abb6-8a2826b30293) 
 
 
 ## BTSWA for Kali Linux
