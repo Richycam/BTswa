@@ -1,4 +1,3 @@
-![BTSWAlogo_kali](https://github.com/user-attachments/assets/7a387f55-2983-4b47-b9ce-afd87bd29ba0)
 
 
 
