@@ -1,5 +1,5 @@
+![BTSWAlogo_kali](https://github.com/user-attachments/assets/7a387f55-2983-4b47-b9ce-afd87bd29ba0)
 
-![BTSWAlogo_kali](https://github.com/user-attachments/assets/fc4ebd8c-f83a-4eee-8d45-90a2dd7e07a8)
 
 
 ## BTSWA for Kali Linux
