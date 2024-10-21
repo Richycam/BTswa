@@ -1,5 +1,6 @@
-## BTSWA
-Blue Team Swiss Army Knife.
+
+![BTSWAlogo](https://github.com/user-attachments/assets/3d8ccd33-cd25-4553-abb6-8a2826b30293)
+
 # desgined for linux users
 install Dependencies (providing you have snap)
 ```sh
