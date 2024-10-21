@@ -1,6 +1,10 @@
+
+![BTSWAlogo_kali](https://github.com/user-attachments/assets/fc4ebd8c-f83a-4eee-8d45-90a2dd7e07a8)
+
+
 ## BTSWA for Kali Linux
 
-<img width="75" alt="kali-linux-logo-AED181186E-seeklogo com" src="https://github.com/user-attachments/assets/bc972b7b-31dd-4613-9f2a-992775d0f059">
+
 
 
 
