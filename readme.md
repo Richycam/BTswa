@@ -26,7 +26,6 @@
 
 
 
-![Alt Text](https://media1.tenor.com/m/tZ2Xd8LqAnMAAAAd/typing-fast.gif)
 
 some development notes
 --
