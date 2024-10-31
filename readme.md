@@ -2,23 +2,11 @@
 ![BTSWAlogo](https://github.com/user-attachments/assets/3d8ccd33-cd25-4553-abb6-8a2826b30293)
 
 # desgined for linux users
-install Dependencies (providing you have snap)
-```sh
-sudo snap mapscii
-```
 
-for Python
-```sh
-python3 btswa.py
-```
-for C++
-```sh
-G++ btswa.cpp
-./a.out
-```
-
-
-![Screenshot from 2024-10-18 14-27-17](https://github.com/user-attachments/assets/2832b28f-29de-401b-931b-8ae47e8f07c6)
+Kali Linux - Complete
+Ubuntu -Complete
+Red hat/Fedora - Nope
+Windows - Nope 
 
 
 ![Alt Text](https://media1.tenor.com/m/tZ2Xd8LqAnMAAAAd/typing-fast.gif)
