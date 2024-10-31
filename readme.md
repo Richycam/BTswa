@@ -15,9 +15,9 @@
 
 
 
-    Kali Linux - Complete
+    Kali Linux - Complete (Python)
 
-    Ubuntu -Complete  
+    Ubuntu -Complete  (Python, C++ works on Ubuntu)
 
     Red hat/Fedora - Nope
 
