@@ -3,13 +3,27 @@
 
 # desgined for linux users
 
-Kali Linux - Complete
 
-Ubuntu -Complete  
 
-Red hat/Fedora - Nope
+![image](https://github.com/user-attachments/assets/e1467ef8-ef93-428b-859a-ab753d5c286b)
 
-Windows - Nope 
+
+
+
+
+
+
+
+
+    Kali Linux - Complete
+
+    Ubuntu -Complete  
+
+    Red hat/Fedora - Nope
+
+    Windows - Nope 
+
+
 
 
 ![Alt Text](https://media1.tenor.com/m/tZ2Xd8LqAnMAAAAd/typing-fast.gif)
