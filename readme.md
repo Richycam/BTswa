@@ -4,8 +4,8 @@
 # desgined for linux users
 
 
+![C_and_Python_Logos](https://github.com/user-attachments/assets/f764b3b3-806f-4a3f-bdaf-75f1e4c73178)
 
-![image](https://github.com/user-attachments/assets/e1467ef8-ef93-428b-859a-ab753d5c286b)
 
 
 
