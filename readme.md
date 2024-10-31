@@ -4,8 +4,11 @@
 # desgined for linux users
 
 Kali Linux - Complete
-Ubuntu -Complete
+
+Ubuntu -Complete  
+
 Red hat/Fedora - Nope
+
 Windows - Nope 
 
 
