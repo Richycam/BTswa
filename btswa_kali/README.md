@@ -30,4 +30,6 @@ user@pc~: python3 btswa_kl.py
 
 
 
+Kali linux users:
+
 ![Alt Text](https://media1.tenor.com/m/tZ2Xd8LqAnMAAAAd/typing-fast.gif)
